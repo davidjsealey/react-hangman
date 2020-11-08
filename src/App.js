@@ -39,13 +39,13 @@ function App() {
     window.addEventListener('keydown', handleKeydown);
 
     return () => window.removeEventListener('keydown', handleKeydown);
-  }, [correctLetters, wrongLetters])
+  }, [correctLetters, wrongLetters, playable])
 
   return (
     <>
       <Header />
       <div className="game-container">
-        <Figure />
+        <Figure wrongLetters={wrongLetters} />
         <WrongLetters wrongLetters={wrongLetters} />
         <Word selectedWord={selectedWord} correctLetters={correctLetters} />
       </div>
